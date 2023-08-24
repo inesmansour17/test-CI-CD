@@ -3,22 +3,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install Node.js
-  uses: actions/setup-node@v2
-  with:
-    node-version: '18' # Ou la version que vous utilisez
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18' # Ou la version que vous utilisez
 
-  - name: Cache Node.js modules
-  uses: actions/cache@v2
-  with:
-    path: ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+     - name: Install Dependencies
+     run: npm ci # Utilisez 'npm ci' à la place de 'npm install' pour une installation plus propre
 
-- name: Install Dependencies
-  run: npm ci # Utilisez 'npm ci' à la place de 'npm install' pour une installation plus propre
-
-- name: Build Angular App
-  run: npx ng build --prod
+       
+    - name: Build Angular App
+      run: npm run ci:build
 
      
+
+
+
