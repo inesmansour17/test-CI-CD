@@ -1,13 +1,15 @@
-image: node:18
+name: CI Workflow
 
-stages:
-  - build
-  - test
+on:
+  push:
+    branches:
+      - master
 
-before_script:
-  - npm install
-
-build:
-  stage: build
-  script:
-    - npm run build -- --prod
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Ajoute ici les étapes de construction, de test, etc.
