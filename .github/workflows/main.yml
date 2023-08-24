@@ -12,4 +12,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      # Ajoute ici les étapes de construction, de test, etc.
+     - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: npm run build -- --prod
