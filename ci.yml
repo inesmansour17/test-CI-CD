@@ -1,0 +1,13 @@
+image: node:18
+
+stages:
+  - build
+  - test
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  script:
+    - npm run build -- --prod
