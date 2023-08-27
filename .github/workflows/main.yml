@@ -17,4 +17,4 @@ jobs:
       
 
       - name: Build Angular App
-        run:  npm start build --prod
+        run:  npm run build --prod
