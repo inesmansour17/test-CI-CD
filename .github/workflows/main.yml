@@ -16,7 +16,7 @@ jobs:
          run: npm install
 
       - name: Lint
-        run: npm run lint
+        run: ng run lint
       
 
       - name: Build Angular App
