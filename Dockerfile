@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Construisez l'application Angular
-RUN npm run build
+# RUN npm run build
 
 # Exposez le port sur lequel votre application écoute
 EXPOSE 4200
